@@ -1,0 +1,226 @@
+body{
+    background:rgb(123, 239, 27);
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    margin: 0;
+    padding: 0;
+}
+
+text{
+    margin-top: 10px;
+    align-items: center; 
+    justify-content: center; 
+    color: rgb(0, 0, 0);
+    font-size: 35px;
+    display: none;
+}
+
+header {
+    /*background-color: #ecf7e6;*/
+    height:80px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 60px; 
+}
+
+
+h2 {
+    margin-bottom: 5px;  
+}
+
+p{
+    display: block;
+    margin: 1em 0; /* Adjust the margin as needed */
+    max-width: 100%; /* Ensure the paragraph doesn't exceed the container width */
+    box-sizing: border-box;
+    font-size: 20px;
+}
+
+#intro img{
+    width: 800px;
+    top: 30%;
+    left:50%;
+    transform: translate(-50%, -50%);/*for centering the image*/
+    margin-top: 10vh;
+    position: absolute;
+
+}
+/*BUTTON----------------------------------------------*/
+#button-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button-83{
+    background-color: red;
+    border-radius: 30px;
+    width: 150px;
+    height: 50px;
+    font-size: 16px;
+    box-shadow: 0 0 5x cyan, 0 0 25px cyan;
+    top: 80%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+}
+
+.button-83:hover {
+   box-shadow: 0 0 5px rgb(254, 51, 51), 0 0 25px rgb(254, 51, 51), 0 0 50px rgb(254, 51, 51), 0 0 200px rgb(254, 51, 51);
+   
+}
+/*the GAME BOARD, the playing field---------------------------------------------------------------------------------*/
+.game {
+    position: relative;
+    background-image: url('board1.png');/*default image*/
+    background-size: 100% 100%; 
+    height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(18, 24px);
+    grid-template-rows: repeat(18, 24px);
+    margin: auto; /* Center the grid horizontally */
+    max-width: 432px;
+    max-height: 432px; /* maximum width for the grid */
+    border-radius: 15px;
+    border: 10px solid #ffffff; 
+    box-shadow: rgba(0, 0, 0, 0.4) 20px 20px 20px;/* [color][horizontal offset] [vertical offset] [blur radius] [spread radius] ;*/
+    visibility: hidden;
+
+}
+
+
+/*SCORE BOARD, including the radious, fond size, color and itd.----------------------------------------------------------------*/
+.board{
+    position:absolute;
+    display: flex;  
+    align-items: center;
+    justify-content: start;
+    background-color:#333;
+    border:8px solid white;
+    border-radius: 10px;
+    width: 250px;
+    height: 60px;
+    top: 50px;
+    margin: 20px; 
+    color:white;
+    font-size: 25px;
+}   
+
+/*for the score and the label*/
+#user-label{
+    margin-left: 15px;
+}
+
+#user-score{
+    margin-left: 10px; /* Adjusted margin for spacing */
+}
+/*----------------------------------------------------------------------------------------------------------------------------*/
+.snake{
+    background-color: red;
+    box-shadow: rgba(0, 0, 0.2, 0.3) 5px 5px 5px;
+    border-radius: 40%; /* Make a snake a circle */
+    size: 18px;
+}
+
+.apple{
+    width: 22px;
+}
+
+
+#restart-button{
+    font-size: 30px;
+    text-align: center;
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    border: 3px solid white;
+    border-radius: 10px;
+    height: 65px;
+    background-color: rgb(123, 239, 27);
+}
+
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+
+/*for the slider and the icon------------------------------------------------------------------------------------------------------------*/
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+#sliderIcon {
+    position: fixed;
+    top: 5px;
+    right: 5px;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 2;
+}
+
+#sliderCard {
+    position: fixed;
+    top: 0;
+    right: -300px; /* Start off-screen */
+    width: 300px;
+    height: 100vh;
+    background-color: #333;
+    color: #fff;
+    transition: right 0.3s ease-in-out;
+    z-index: 1;
+    overflow: hidden;
+}
+
+#sliderIcon img{
+    width: 100px;
+}
+
+#sliderCard p{
+    font-size: 18px;
+    text-align: justify; /*for alligning the text on both sides*/
+
+}
+#sliderContent {
+    padding: 40px 40px;   
+}
+/*------------------------------------------------------------------------------------------------------------*/
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.hover-button {
+    padding:0;
+    position: relative;
+    overflow: hidden;
+    width: 70px;
+    height:70px;
+    border-radius: 30%;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.hover-button img {
+    width: 300%;
+    height: 300%;
+    object-fit: cover;
+    object-position: 50% 50%; /* Center the image within the container */
+}
+
+.hover-button:hover {
+    transform: scale(1.1);
+}
+

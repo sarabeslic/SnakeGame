@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SNAKE GAME </title>
+    
+    <link rel="stylesheet" href="./style.css">
+
+</head>
+
+<body>
+        <header>
+            <text id="h1" style="fill:#ae0000; letter-spacing:0; word-spacing:0; kerning:auto; font-family:Showcard Gothic; font-size:9; font-weight:400; font-style:normal; stroke-width:0; font-stretch:normal"><tspan x="0">SNAKE GAME</tspan></text>
+        </header> <!--style code copied from Krita styles-->
+
+    <section class="game">
+        <div id="fieldpic">
+            <img width="432px" height="432px" alt="field picture">
+            
+        </div>
+    </section>
+
+    <footer class="board" style="visibility:hidden ">
+        <div id="user-label" class="badge">User score:</div>
+        <span id="user-score">0</span>
+        
+    </footer>
+
+    <button id="restart-button" style="display:none" onclick="resetGame()">RESTART</button>
+
+    <div id="intro" style="display:block">
+        <img src="snakeLogo.png" alt="snake image">
+        <button id="button-83" class="button-83" onclick="startSnakeGame()">Start Game</button>
+
+    </div>
+
+    <div id="sliderIcon" onclick="toggleSlider()">
+        <img src="snakeIcon.png" alt="Slider Icon">
+    </div>
+    
+    <div id="sliderCard">
+        <div id="sliderContent">
+            <h2>GAME RULES</h2>
+            <p>Control the snake to eat apples and grow. Use the arrow keys to change the snake's direction.
+                With each eaten apple, the snake grows larger. The game ends when the snake eats itself. Be careful,
+                if the snake passes through the other side of the wall, not to bite its tail.</p>
+            <p> Earn one point for each eaten apple. 
+                To restart the game, press the restart button.</p>
+            <p><strong> Choose the board you want to play on.</strong></p>
+            
+
+            <div class="button-container">
+                <button class="hover-button" onclick="handleButtonClick(1)">
+                    <img src="board1.png" alt="Button 1">
+                </button>
+                <button class="hover-button" onclick="handleButtonClick(2)">
+                    <img src="board2.png" alt="Button 2">
+                </button>
+                <button class="hover-button" onclick="handleButtonClick(3)">
+                    <img src="board3.png" alt="Button 3">
+                </button>
+            </div>
+
+        </div>
+    </div>
+    <audio id="sound"></audio>
+    <script src="./snakeGameKopija.js"></script> <!-- Linking the JS file -->
+</body>
+</html>
+
